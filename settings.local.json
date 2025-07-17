@@ -13,22 +13,21 @@
       "Edit",
       "Bash(chmod:*)",
       "Bash(touch:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(python:*)",
+      "Bash(rm:*)",
+      "Bash(git add:*)",
+      "Bash(git reset:*)",
+      "Bash(git commit:*)",
+      "Bash(git rebase:*)",
+      "Bash(true)",
+      "Bash(./test_runpod_fixed.sh:*)"
     ],
     "deny": []
   },
   "hooks": {
     "PreToolUse": [],
     "PostToolUse": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "uv run .claude/hooks/post_tool_use.py"
-          }
-        ]
-      },
       {
         "matcher": "",
         "hooks": [
@@ -48,15 +47,6 @@
             "command": "uv run .claude/hooks/notification.py --notify"
           }
         ]
-      },
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "uv run .claude/hooks/notification.py --notify"
-          }
-        ]
       }
     ],
     "Stop": [
@@ -68,27 +58,9 @@
             "command": "uv run .claude/hooks/stop.py --chat"
           }
         ]
-      },
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "uv run .claude/hooks/stop.py --chat"
-          }
-        ]
       }
     ],
     "SubagentStop": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "uv run .claude/hooks/subagent_stop.py"
-          }
-        ]
-      },
       {
         "matcher": "",
         "hooks": [
